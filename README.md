@@ -1,16 +1,18 @@
 # Divi Smart Node
-Get a Divi core node up and running on a Raspberry Pi 4 from scratch.
+Get a Divi core node up and running on a Raspberry Pi from scratch. This procedure could work with any Raspberry, included new Pi 4B.
 
 # System requirements
-I'm using a Raspberry Pi 4 B with a 32GB Class 10 microSD card and 4GB of RAM.
+I'm using a Raspberry Pi 4B with a 32GB Class 10 microSD card and 4GB of RAM.
 
 **Note: While no issues have been found with this implementation, this software is considered to be in an Alpha stage. Use at your own risk and *always* back up your mnemonic seed phrase before transacting with any real funds**
 
 # Instructions
-1. [Download](https://divi-smart-node.sfo2.cdn.digitaloceanspaces.com/divi-smart-node-0.0.3-alpha.img.gz) the latest image.
-*Note: The latest image is for the Raspberry Pi 4. If you would like the older, 3b+ image, [click here](https://divi-smart-node.sfo2.cdn.digitaloceanspaces.com/divi-smart-node-0.0.2-alpha.img.gz)*
-2. Use [Etcher](https://www.balena.io/etcher/) or similar software to flash the image to a microSD Card (64GB recommended).
-3. Insert the flashed microSD card into your Raspberry Pi 3b+ device and turn on.
+1. [Download](https://downloads.raspberrypi.org/raspbian_lite_latest) the latest Raspbian Lite Image (just 433 MB download). There's no GUI in this image, I've choosen this one to make things simpler and quick as possible. You can always add stuff to your Raspbian later.
+2. Extract .img file from zip file (2.2 GB).
+2. Use [SD Card Formatter](https://www.sdcard.org/downloads/formatter/) or similar software to format microSD Card.
+3. Use [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/files/latest/download) or similar software to flash the image to a microSD Card.
+4. Insert the flashed microSD card into your Raspberry Pi 4B device and turn on. Note, because I'm attaching my Pi 4 to an old TV, I had to configure the file config.txt to make my old TV working. You can modify the file editing it even from Windows, accessing the "boot" partition on SD Card after flashing. In my specific case, I've changed hdmi_group=1 and hdmi_mode=4. This could fix other problems too.
+
 4. On boot, you will be prompted to enter an RPC username, type one of your choosing and press `ENTER`.
 5. The node will configure itself and begin to sync automatically, use the node as usual via the command line.
 
