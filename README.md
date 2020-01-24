@@ -25,7 +25,7 @@ I'm using a Raspberry Pi 4B with a 32GB Class 10 microSD card and 4GB of RAM.
 2. Unpack tarball; your executables will go in /home/pi/divi-1.0.4/bin
   a. tar xvf divi-1.0.4-RPi2.tar.gz
 3. I suggest you to define some useful alias to make things simpler. You can add them to ~/.bash_aliases, and load them with "source ~/.bash_aliases":
-# System
+`# System
 alias aliasfile="sudo nano ~/.bash_aliases"
 alias aliasreload="source ~/.bash_aliases"
 alias sweep="cat /dev/null > ~/.bash_history && history -c && exit"
@@ -43,7 +43,7 @@ alias diviclearcache="sudo rm -rf ~/.divi/blocks ~/.divi/chainstate ~/.divi/data
 /.divi/debug.log ~/.divi/fee_estimates.dat ~/.divi/mncache.dat ~/.divi/netfulfilled.dat ~/.divi/peers.dat ~/.divi/sporks"
 alias divirefresh="~/divi-1.0.4/bin/divid -reindex"
 alias divirescan="~/divi-1.0.4/bin/divid -rescan"
-alias ll='ls -la'
+alias ll='ls -la'`
   
 
   a. "cd
