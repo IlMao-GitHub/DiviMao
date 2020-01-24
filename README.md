@@ -1,5 +1,5 @@
 # Divi Smart Node
-Get a Divi core node up and running on a Raspberry Pi from scratch. This procedure could work with any Raspberry, included new Pi 4B.
+Get a Divi core node up and running on a Raspberry Pi from scratch. This procedure should work with any Raspberry, included new Pi 4B.
 
 # System requirements
 I'm using a Raspberry Pi 4B with a 32GB Class 10 microSD card and 4GB of RAM.
