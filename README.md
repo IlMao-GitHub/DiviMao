@@ -47,7 +47,8 @@ For an alias description, please refer to official [github page](https://github.
 
 4. At this point directory ~/.divi doesn't exist yet. To create all the structure, simply start divid, using the just defined alias: `divistart`.
 5. Edit file /home/pi/.divi/divi.conf inserting in it the rpcuser and rpcpassword lines shown by divid output. Add line `daemon=1` at the end of the file. Example:
-```rpcuser=divirpc
+```
+rpcuser=divirpc
 rpcpassword=CA45HPtyYojothQWsvByNBVZupo3kCQum8FFWGZ1v5in
 daemon=1
 ```
