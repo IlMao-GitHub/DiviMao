@@ -44,6 +44,7 @@ alias divirescan="~/divi-1.0.4/bin/divid -rescan"
 alias ll='ls -la'
 ```
 For an alias description, please refer to official [github page](https://github.com/DiviProject/divi-smart-node).
+
 4. At this point directory ~/.divi doesn't exist yet. To create all the structure, simply start divid, using the just defined alias: `divistart`.
 5. Edit file /home/pi/.divi/divi.conf inserting in it the rpcuser and rpcpassword lines shown by divid output. Add line `daemon=1` at the end of the file. Example:
 ```rpcuser=divirpc
