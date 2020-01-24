@@ -21,7 +21,7 @@ I'm using a Raspberry Pi 4B with a 32GB Class 10 microSD card and 4GB of RAM.
 # Download and configure Divi core 1.0.4
 
 1. Download Divi core 1.0.4: `cd; wget https://github.com/DiviProject/divi-smart-node/releases/download/v1.0.4-rpi/divi-1.0.4-RPi2.tar.gz`
-2. Unpack tarball; your executables will go in /home/pi/divi-1.0.4/bin: `tar xvf divi-1.0.4-RPi2.tar.gz`
+2. Unpack tarball: `tar xvf divi-1.0.4-RPi2.tar.gz`. Your executables will go in /home/pi/divi-1.0.4/bin. 
 3. I suggest you to define some useful alias to make things simpler. You can add them to ~/.bash_aliases, and load them with `source ~/.bash_aliases`:
 ```# System
 alias aliasfile="sudo nano ~/.bash_aliases"
