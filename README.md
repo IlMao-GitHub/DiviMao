@@ -8,7 +8,7 @@ I'm using a Raspberry Pi 4B with a 32GB Class 10 microSD card and 4GB of RAM.
 
 # Make your Raspbian working
 1. [Download](https://downloads.raspberrypi.org/raspbian_lite_latest) the latest Raspbian Lite Image (just 433 MB download). There's no GUI in this image, I've choosen this one to make things simpler and quick as possible. You can always add stuff to your Raspbian later.
-2. Extract .img file from zip file (2.2 GB).
+2. Extract img file from zip file (2.2 GB).
 3. Use [SD Card Formatter](https://www.sdcard.org/downloads/formatter/) or similar software to format microSD Card.
 4. Use [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/files/latest/download) or similar software to flash the image to a microSD Card.
 5. Insert the flashed microSD card into your Raspberry Pi 4B device and turn it on. Note: because I'm attached my Pi 4 to an old TV, I had to configure the file config.txt to make my old TV working. You can modify the file editing it even from Windows, accessing the "boot" partition on SD Card after flashing. In my specific case, I've changed hdmi_group=1 and hdmi_mode=4. This could help to fix other display problems too.
@@ -20,7 +20,33 @@ I'm using a Raspberry Pi 4B with a 32GB Class 10 microSD card and 4GB of RAM.
 
 # Download and install Divi core 1.0.4
 
-1. Download Divi core 1.0.4 (
+1. Download Divi core 1.0.4:
+  a. cd; wget https://github.com/DiviProject/divi-smart-node/releases/download/v1.0.4-rpi/divi-1.0.4-RPi2.tar.gz
+2. Unpack tarball; your executables will go in /home/pi/divi-1.0.4/bin
+  a. tar xvf divi-1.0.4-RPi2.tar.gz
+3. I suggest you to define some useful alias to make things simpler. You can add them to ~/.bash_aliases, and load them with "source ~/.bash_aliases":
+# System
+alias aliasfile="sudo nano ~/.bash_aliases"
+alias aliasreload="source ~/.bash_aliases"
+alias sweep="cat /dev/null > ~/.bash_history && history -c && exit"
+
+# Divi
+alias init-divi-conf="mv ~/divisetup-complete.sh ~/divisetup-run.sh"
+alias dli="~/divi-1.0.4/bin/divi-cli"
+alias dividebug="sudo tail -f ~/.divi/debug.log"
+alias divistart="~/divi-1.0.4/bin/divid"
+alias dividir="cd ~/divi-1.0.4/bin"
+alias datadir="cd ~/.divi"
+alias diviuserdelete="sudo rm -rf ~/.divi/backups ~/.divi/divi.conf ~/.divi/masternode.conf ~/.divi/mnpayments.dat ~/.divi/wallet.da
+t"
+alias diviclearcache="sudo rm -rf ~/.divi/blocks ~/.divi/chainstate ~/.divi/database ~/.divi/zerocoin ~/.divi/.lock ~/.divi/db.log ~
+/.divi/debug.log ~/.divi/fee_estimates.dat ~/.divi/mncache.dat ~/.divi/netfulfilled.dat ~/.divi/peers.dat ~/.divi/sporks"
+alias divirefresh="~/divi-1.0.4/bin/divid -reindex"
+alias divirescan="~/divi-1.0.4/bin/divid -rescan"
+alias ll='ls -la'
+  
+
+  a. "cd
 4. On boot, you will be prompted to enter an RPC username, type one of your choosing and press `ENTER`.
 5. The node will configure itself and begin to sync automatically, use the node as usual via the command line.
 
