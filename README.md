@@ -9,17 +9,18 @@ I'm using a Raspberry Pi 4B with a 32GB Class 10 microSD card and 4GB of RAM.
 # Make your Raspbian working
 1. [Download](https://downloads.raspberrypi.org/raspbian_lite_latest) the latest Raspbian Lite Image (just 433 MB download). There's no GUI in this image, I've choosen this one to make things simpler and quick as possible. You can always add stuff to your Raspbian later.
 2. Extract .img file from zip file (2.2 GB).
-2. Use [SD Card Formatter](https://www.sdcard.org/downloads/formatter/) or similar software to format microSD Card.
-3. Use [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/files/latest/download) or similar software to flash the image to a microSD Card.
-4. Insert the flashed microSD card into your Raspberry Pi 4B device and turn on. Note: because I'm attached my Pi 4 to an old TV, I had to configure the file config.txt to make my old TV working. You can modify the file editing it even from Windows, accessing the "boot" partition on SD Card after flashing. In my specific case, I've changed hdmi_group=1 and hdmi_mode=4. This could help to fix other display problems too.
-5. Login with default user "pi" and password "raspberry".
-6. Configure your netowork to access Internet. If you are using an Ethernet connection, it should automatically get a IP Address. If you are using just wifi, you could use "sudo raspi-config" to configure it (2.Network Options/N2.Wi-fi). Then, "iwconfig" to check wi-fi, "ifconfig" to check network.
-7. If you want to use SSH (PUTTY) to remotely connect to your raspberry, you need to enable it always through "sudo raspi-config" (5.Interfacing Options/P2.SSH). I strongly suggest you to change User Password for the current too (1.Change User Password).
-8. Before to download and configure Divi Core, I suggest you to update your Raspian packages with "sudo apt-get dist-upgrade".
+3. Use [SD Card Formatter](https://www.sdcard.org/downloads/formatter/) or similar software to format microSD Card.
+4. Use [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/files/latest/download) or similar software to flash the image to a microSD Card.
+5. Insert the flashed microSD card into your Raspberry Pi 4B device and turn it on. Note: because I'm attached my Pi 4 to an old TV, I had to configure the file config.txt to make my old TV working. You can modify the file editing it even from Windows, accessing the "boot" partition on SD Card after flashing. In my specific case, I've changed hdmi_group=1 and hdmi_mode=4. This could help to fix other display problems too.
+6. Login with default user "pi" and password "raspberry".
+7. Configure your netowork to access Internet. If you are using an Ethernet connection, it should automatically get a IP Address. If you are using just wifi, you could use "sudo raspi-config" to configure it (2.Network Options/N2.Wi-fi). Then, "iwconfig" to check wi-fi, "ifconfig" to check network.
+8. If you want to use SSH (PUTTY) to remotely connect to your Raspberry, you need to enable it through "sudo raspi-config" as well. (5.Interfacing Options/P2.SSH). I strongly suggest you to change User Password for the current too (1.Change User Password).
+9. Before to download and configure Divi Core, I suggest you to update your Raspian packages with "sudo apt-get update" and "sudo apt-get dist-upgrade".
+10. I suggest you to change swap file size too, modifying /etc/dphys-swapfile configuration file (putting a "#" in front to "CONF_SWAPSIZE=100" line, in order to comment it. Then, "sudo dphys-swapfile setup" and "sudo dphys-swapfile swapon". Check with "free" command.
 
 # Download and install Divi core 1.0.4
 
-
+1. Download Divi core 1.0.4 (
 4. On boot, you will be prompted to enter an RPC username, type one of your choosing and press `ENTER`.
 5. The node will configure itself and begin to sync automatically, use the node as usual via the command line.
 
