@@ -52,4 +52,4 @@ rpcpassword=CA45HPtyYojothQWsvByNBVZupo3kCQum8FFWGZ1v5in
 daemon=1
 ```
 5. Start divid again: `divistart`. This time it should show "DIVI server starting", and sync should start. You can monitor advance of sync through commands `dli getinfo` (blocks must reach the highest block in blockchain), or `dli mnsync status`, where IsBlockchainSynced must be true, RequestMasternodeAssets must be 999 and RequestMasternodeAttempt must be 0. This could takes several hours, depending of your networks.
-For further information, please refer to the official pages on [Divi Project Wiki](https://wiki.diviproject.org/) 
+For further information, please refer to the official pages on [Divi Project Wiki](https://wiki.diviproject.org/).
