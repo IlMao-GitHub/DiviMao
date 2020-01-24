@@ -41,7 +41,8 @@ alias diviclearcache="sudo rm -rf ~/.divi/blocks ~/.divi/chainstate ~/.divi/data
 /.divi/debug.log ~/.divi/fee_estimates.dat ~/.divi/mncache.dat ~/.divi/netfulfilled.dat ~/.divi/peers.dat ~/.divi/sporks"
 alias divirefresh="~/divi-1.0.4/bin/divid -reindex"
 alias divirescan="~/divi-1.0.4/bin/divid -rescan"
-alias ll='ls -la'```
+alias ll='ls -la'
+```
   
 
   a. "cd
