@@ -18,7 +18,7 @@ I'm using a Raspberry Pi 4B with a 32GB Class 10 microSD card and 4GB of RAM.
 9. Before to download and configure Divi Core, I suggest you to update your Raspian packages with `sudo apt-get update` and `sudo apt-get dist-upgrade`.
 10. I suggest you to change swap file size too, modifying /etc/dphys-swapfile configuration file (putting a "#" in front to "CONF_SWAPSIZE=100" line, in order to comment it. Then, `sudo dphys-swapfile setup` and `sudo dphys-swapfile swapon`. Check with `free` command.
 
-# Download and install Divi core 1.0.4
+# Download and configure Divi core 1.0.4
 
 1. Download Divi core 1.0.4: `cd; wget https://github.com/DiviProject/divi-smart-node/releases/download/v1.0.4-rpi/divi-1.0.4-RPi2.tar.gz`
 2. Unpack tarball; your executables will go in /home/pi/divi-1.0.4/bin: `tar xvf divi-1.0.4-RPi2.tar.gz`
@@ -43,79 +43,12 @@ alias divirefresh="~/divi-1.0.4/bin/divid -reindex"
 alias divirescan="~/divi-1.0.4/bin/divid -rescan"
 alias ll='ls -la'
 ```
-  
-
-  a. "cd
-4. On boot, you will be prompted to enter an RPC username, type one of your choosing and press `ENTER`.
-5. The node will configure itself and begin to sync automatically, use the node as usual via the command line.
-
-For more information on CLI commands, see our [wiki page](https://wiki.diviproject.org/#divi-cli)
-
-# Filepaths
-
-### Autostart Configuration
-
-The autostart configuration can be found at `~/.config/lxsession/LXDE-pi/autostart`
-
-* Scripts will be run at startup using the autostart file
-* Always keep scripts above the `@xscreensaver -no-splash` line
-
-### Divi Config Script (first run)
-
-This process is automated and does not require any user input. The divi daemon (`divid`) is run at the system level as a service. 
-
-A script called `divisetup-run.sh` will run the first time the image is booted. It is located at `/home/pi/divisetup-run.sh` and performs the following actions:
-
-* Searches the `.divi` data directory for `divi.conf`
-* Randomly generates an rpc username & password using the SHA256 hashing algorithm and writes it to `divi.conf`
-* Writes `daemon=0` to the `divi.conf` file
-* Renames `divisetup-run.sh` to `divisetup-complete.sh`
-* Starts `divid.service`
-*If `~/.divi/divi.conf` exists already, only the final step will run.*
-
-### Divi Config Script (subsequent runs)
-
-After the initial setup, a script named `divi-startup.sh` runs on boot. It is located at `/home/pi/divi-startup.sh` and performs the following actions:
-
-* Checks for `divisetup-complete.sh`
-* If not found, runs `divisetup-run.sh`
-
-### Divi Shutdown Script
-
-**Note: Shutdown script has not been confirmed as working and should be considered a known issue.**
-
-# Aliases
-
-Several bash aliases are present in the root directory's `.bash_aliases` file. 
-
-| ALIAS | FUNCTION  |
-| ---   | ---       |
-| `aliasfile`       | opens the alias file for editing  |
-| `aliasreload`     | reloads the shell                 |
-| `sweep`           | deletes `.bash_history` and closes the terminal |
-| `init-divi-conf`  | resets `divisetup-run.sh` to reconfigure `divid` on next boot |
-| `dli`             | alias for `./divi-cli`. Run any `divi-cli` command with `dli <command>` |
-| `dividebug`       | tails the debug log |
-| `divistart`       | starts `./divid`  |
-| `diviservicestart`| starts the `divid.service` system service |
-| `diviservicestop` | stops `divid.service` |
-| `diviservicestatus`| prints the `divid.service` status for debugging |
-| `diviclearcache`  | removes unnecessary data directory files |
-| `divirefresh`     | starts `./divid` with the `-reindex` flag |
-| `divirescan`      | starts `./divid` with the `-rescan` flag |
-| `dividir`         | quick access to the `DIVI` directory  |
-| `datadir`         | quick access tho the Divi data directory where config files, etc. are found | 
-| `diviuserdelete`  | **DANGER:** This command removes all user-specific files, including `wallet.dat`. Use with extreme caution|
-
-
-
-
-# FAQ
-
-Q. Can I run a masternode on a Raspberry Pi?
-
-A. Yes, see our [wiki page](https://wiki.diviproject.org/#masternode-setup-guide) for instructions.
-
-Q. Can I use this Raspbian image as a "stake box?"
-
-A. Yes, just be sure to back up your mnemonic seed phrase in case of SD card errors or any other issues.
+For an alias description, please refer to official [github page](https://github.com/DiviProject/divi-smart-node).
+4. At this point directory ~/.divi doesn't exist yet. To create all the structure, simply start divid, using the just defined alias: `divistart`.
+5. Edit file /home/pi/.divi/divi.conf inserting in it the rpcuser and rpcpassword lines shown by divid output. Add line `daemon=1` at the end of the file. Example:
+```rpcuser=divirpc
+rpcpassword=CA45HPtyYojothQWsvByNBVZupo3kCQum8FFWGZ1v5in
+daemon=1
+```
+5. Start divid again: `divistart`. This time it should show "DIVI server starting", and sync should start. You can monitor advance of sync through commands `dli getinfo` (blocks must reach the highest block in blockchain), or `dli mnsync status`, where IsBlockchainSynced must be true, RequestMasternodeAssets must be 999 and RequestMasternodeAttempt must be 0. This could takes several hours, depending of your networks.
+For further information, please refer to the official pages on [Divi Project Wiki](https://wiki.diviproject.org/) 
