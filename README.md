@@ -1,4 +1,4 @@
-# Divi Smart Node
+# Install Divi Core on Raspberry from scratch 
 Get a Divi core node up and running on a Raspberry Pi from scratch. This procedure should work with any Raspberry, including the new Pi 4B.
 
 # System requirements
