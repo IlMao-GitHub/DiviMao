@@ -6,7 +6,7 @@ I'm using a Raspberry Pi 4B with a 32GB Class 10 microSD card and 4GB of RAM.
 **Note: While no issues have been found with this implementation, this software is considered to be in an Alpha stage. Use at your own risk and *always* back up your mnemonic seed phrase before transacting with any real funds**
 
 # Make your Raspbian working
-1. [Download](https://downloads.raspberrypi.org/raspbian_lite_latest) the latest Raspbian Lite Image (just 433 MB download). There's no GUI in this image, I've choosen this one to make things simpler and quick as possible. You can always add stuff to your Raspbian later.
+1. [Download](https://downloads.raspberrypi.org/raspbian_lite_latest) the latest Raspbian Lite Image (just 433 MB download while I'm writing this doc). There's no GUI in this image, I've choosen this one to make things simpler and quick as possible. You can always add stuff to your Raspbian later.
 2. Extract img file from zip file (2.2 GB).
 3. Use [SD Card Formatter](https://www.sdcard.org/downloads/formatter/) or similar software to format microSD Card.
 4. Use [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/files/latest/download) or similar software to flash the image to a microSD Card.
@@ -19,7 +19,7 @@ I'm using a Raspberry Pi 4B with a 32GB Class 10 microSD card and 4GB of RAM.
 
 # Download and configure Divi core 1.0.8
 
-1. Download Divi core 1.0.8: `cd; wget https://github.com/DiviProject/divi-smart-node/releases/download/v1.0.8/divi-1.0.8-RPi2.tar.gz`
+1. Download Divi core 1.0.8: `cd; wget https://github.com/DiviProject/Divi/releases/download/v1.0.8/divi-1.0.8-RPi2.tar.gz`
 2. Unpack tarball: `tar xvf divi-1.0.8-RPi2.tar.gz`. Your executables will go in /home/pi/divi-1.0.8/bin. 
 3. I suggest you to define some useful alias to make things simpler. You can add them to ~/.bash_aliases, and load them with `source ~/.bash_aliases`:
 ```
