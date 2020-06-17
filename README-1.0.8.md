@@ -55,7 +55,7 @@ daemon=1
 6. Start divid again: `divistart`. This time it should show "DIVI server starting", and sync should start. You can monitor advance of sync through commands `dli getinfo` (blocks must reach the highest block in blockchain), or `dli mnsync status`, where IsBlockchainSynced must be true, RequestMasternodeAssets must be 999 and RequestMasternodeAttempt must be 0. This could takes several hours, depending of your networks. Alternatively, if you want to restore your mnemonic seed, you can use the command `~/divi-1.0.8/bin/divid -mnemonic="one two three..." -rescan`.
 7. If you want to automatically run divid at boot, you could add the following line to /etc/rc.local:
 ```
-/home/pi/divi-1.0.8/bin/divid -daemon -pid=/home/pi/.divi/divid.pid -conf=/home/pi/.divi/divi.conf -datadir=/home/pi/.divi
+su pi -c '/home/pi/divi-1.0.8/bin/divid -daemon -pid=/home/pi/.divi/divid.pid -conf=/home/pi/.divi/divi.conf -datadir=/home/pi/.divi'
 ```
 
 For further information, please refer to the official pages on [Divi Project Wiki](https://wiki.diviproject.org/).
