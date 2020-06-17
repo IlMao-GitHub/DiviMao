@@ -6,7 +6,7 @@ I'm using a Raspberry Pi 4B with a 32GB Class 10 microSD card and 4GB of RAM.
 I'm supposing that you have used my previous guide to install your Divi Core, so you have defined my suggested aliases.
 **Note: While no issues have been found with this implementation, this software is considered to be in an Alpha stage. Use at your own risk and *always* back up your mnemonic seed phrase before transacting with any real funds**
 
-# Download and configure Divi core 1.0.8
+# Download and configure Divi core 1.1.2
 
 1. Download Divi core 1.1.2: `cd; wget https://github.com/DiviProject/Divi/releases/download/v1.1.2/divi-1.1.2-RPi2.tar.gz`
 2. Unpack tarball: `tar xvf divi-1.1.2-RPi2.tar.gz`. Your executables will go in /home/pi/divi-1.1.2/bin. 
