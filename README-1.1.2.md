@@ -12,7 +12,7 @@ I'm supposing that you have used my previous guide to install your Divi Core, so
 2. Unpack tarball: `tar xvf divi-1.1.2-RPi2.tar.gz`. Your executables will go in /home/pi/divi-1.1.2/bin. 
 3. Stop your divid process: `dli stop`
 4. Wait for shutdown. You can check the process using `dividebug` alias; wait for `Shutdown: done` message. CTRL-C to exit.
-5. Update your aliases to reflect new release. If you have used my 1.0.8 guide, you could use following aliases. You can update your ~/.bash_aliases, and load them with `source ~/.bash_aliases`; in vi, you can use the following command to replace all release occurences: `:%s/1.0.8/1.1.2/g` 
+5. Update your aliases to reflect new release. If you have used my 1.0.8 guide, you could use following aliases. You can update your ~/.bash_aliases, and load them with `source ~/.bash_aliases`; in vi, you can use the following command to replace all release occurences: `:%s/1.0.8/1.1.2/g`. Use nano to edit the file if you feel more comfortable with it:  
 ```
 # System
 alias aliasfile="sudo nano ~/.bash_aliases"
