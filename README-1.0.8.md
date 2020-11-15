@@ -57,5 +57,6 @@ daemon=1
 ```
 su pi -c '/home/pi/divi-1.0.8/bin/divid -daemon -pid=/home/pi/.divi/divid.pid -conf=/home/pi/.divi/divi.conf -datadir=/home/pi/.divi'
 ```
+8. If you want to use snapshots to save time, you can find detailed instructions [here](https://snapshots.diviproject.org/), and a script to automatically manage them [here](https://github.com/IlMao-GitHub/DiviMao/blob/master/snap.sh).
 
 For further information, please refer to the official pages on [Divi Project Wiki](https://wiki.diviproject.org/).
