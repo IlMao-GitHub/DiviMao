@@ -43,4 +43,4 @@ For an alias description, please refer to official [github page](https://github.
 su pi -c '/home/pi/divi-2.0.1/bin/divid -daemon -pid=/home/pi/.divi/divid.pid -conf=/home/pi/.divi/divi.conf -datadir=/home/pi/.divi'
 ```
 
-For further information, please refer to the official pages on [Divi Project Wiki](https://wiki.diviproject.org/) and on [GitHub] (https://github.com/DiviProject/Divi/releases/tag/v2.0.1).
+For further information, please refer to the official pages on [Divi Project Wiki](https://wiki.diviproject.org/) and on [GitHub](https://github.com/DiviProject/Divi/releases/tag/v2.0.1).
