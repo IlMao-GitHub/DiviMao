@@ -1,7 +1,7 @@
 #!/bin/bash
 explorer=https://blocks.divi.domains
 echo Data from $explorer
-difficulty=`curl -s $explorer/api/getdifficulty`
+printf -v difficulty '%f' `curl -s $explorer/api/getdifficulty`
 echo Current difficulty: $difficulty
 lastblock=`curl -s $explorer/api/getblockcount`
 echo Last block: $lastblock
@@ -10,11 +10,11 @@ echo Last block hash: $lastblockhash
 
 echo
 echo Data from my blockchain:
-my_difficulty=`~/divi-1.1.2/bin/divi-cli getdifficulty`
+printf -v my_difficulty '%f' `~/dividir/divi-cli getdifficulty`
 echo Current difficulty: $my_difficulty
-my_lastblock=`~/divi-1.1.2/bin/divi-cli getblockcount`
+my_lastblock=`~/dividir/divi-cli getblockcount`
 echo Last block: $my_lastblock
-my_lastblockhash=`~/divi-1.1.2/bin/divi-cli getblockhash $my_lastblock`
+my_lastblockhash=`~/dividir/divi-cli getblockhash $my_lastblock`
 echo Last block hash: $my_lastblockhash
 
 echo
