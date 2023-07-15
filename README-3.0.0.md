@@ -12,7 +12,7 @@ To create the link, I suggest you to `cd` yourself in home directory (/home/pi i
 1. Download Divi core 3.0.0: `cd; wget https://github.com/DiviProject/Divi/releases/download/v3.0.0/divi-3.0.0-RPi2-9e2f76c.tar.gz`
 2. Unpack tarball: `tar xvf divi-3.0.0-RPi2-9e2f76c.tar.gz`. Your executables will go in /home/pi/divi-3.0.0/bin. 
 3. Stop your divid process: `dli stop`
-4. Wait for shutdown. You can check the process using `dividebug` alias; wait for `Shutdown: done` message. CTRL-C to exit.
+4. Wait for shutdown. You can check the process using `dividebug` alias; wait for `MainShutdown: done` message. CTRL-C to exit.
 5. Update your dividir link to reflect new release, using the following command: `ln -sfn divi-3.0.0/bin dividir`
 6. Check/update your aliases. Note the reference to the dividir link previously created. You can update your ~/.bash_aliases, and load them with `source ~/.bash_aliases`  
 ```
