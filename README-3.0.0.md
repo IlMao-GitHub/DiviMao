@@ -5,7 +5,7 @@ This procedure should helps to update our Divi Core, in this case from 2.5.1 to 
 I'm using a Raspberry Pi 4B with a 32GB Class 10 microSD card and 4GB of RAM.
 Respect to previous guides, I've now changed my aliases, removing the release from directory names, and creating a symbolic link to the right one. In this way, you don't have to change release number at every upgrade.
 To create the link, I suggest you to `cd` yourself in home directory (/home/pi in this example) and use the command `ln -sfn divi-3.0.0/bin dividir` to create/change it.  
-**Note: While no issues have been found with this implementation, this software is considered to be in an Alpha stage. Use at your own risk and *always* back up your mnemonic seed phrase before transacting with any real funds**
+**Note: While no issues have been found with this implementation, use it at your own risk and *always* back up your mnemonic seed phrase before transacting with any real funds**
 
 # Download and configure Divi core 3.0.0
 
